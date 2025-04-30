@@ -2,65 +2,94 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>オリーブ薬局山王店のホームページ</title>
+  <title>オリーブ薬局山王店</title>
   <style>
     body {
-      background-color: #ffffff;
-      color: #000000;
+      margin: 0;
       font-family: "MS Pゴシック", sans-serif;
-      text-align: center;
+      background-color: #ffffff;
     }
-    a {
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #f0f0f0;
+      border-right: 2px solid #000;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
       color: blue;
       text-decoration: underline;
     }
+
+    .content {
+      flex-grow: 1;
+      padding: 20px;
+      text-align: center;
+    }
+
     table {
       margin: 0 auto;
       border: 1px solid #000;
       width: 600px;
     }
+
     td {
       padding: 10px;
       text-align: left;
     }
+
     iframe {
       margin-top: 20px;
       border: none;
     }
+
+    img {
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>オリーブ薬局山王店のホームページへようこそ！</h1>
-  <img src="yakkyoku.jpg" alt="店舗の写真" width="400"><br><br>
+  <div class="container">
+    <div class="sidebar">
+      <h2>メニュー</h2>
+      <a href="#">トップ</a>
+      <a href="#">ブログ</a>
+    </div>
+    <div class="content">
+      <h1>オリーブ薬局山王店のホームページへようこそ！</h1>
+      <img src="yakkyoku.jpg" alt="店舗の写真" width="400">
 
-  <table>
-    <tr>
-      <td><b>営業時間：</b>月・火・木・土：8:30〜18:00　水・金：8:30〜16:30</td>
-    </tr>
-    <tr>
-      <td><b>定休日：</b>日曜・祝日</td>
-    </tr>
-    <tr>
-      <td><b>所在地：</b>千葉県千葉市稲毛区山王町138-4</td>
-    </tr>
-    <tr>
-      <td><b>電話番号：</b>043-421-7466</td>
-    </tr>
-    <tr>
-      <td><b>FAX番号：</b>042-421-7467</td>
-    </tr>
-  </table>
+      <table>
+        <tr><td><b>営業時間：</b>月・火・木・土：8:30〜18:00　水・金：8:30〜16:30</td></tr>
+        <tr><td><b>定休日：</b>日曜・祝日</td></tr>
+        <tr><td><b>所在地：</b>千葉県千葉市稲毛区山王町138-4</td></tr>
+        <tr><td><b>電話番号：</b>043-421-7466</td></tr>
+        <tr><td><b>FAX番号：</b>042-421-7467</td></tr>
+      </table>
 
-  <br><br>
-  <h2>アクセス地図</h2>
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.0112251542287!2d140.10232027624398!3d35.651028831769695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602280dfdbe2da2b%3A0x84978b6d5fdba41e!2z44CSMjYxLTAwNzYg5Y2D6JGJ55yM5pil5pys5biC5paw5bO25Yy65bGL5bKh6aeF!5e0!3m2!1sja!2sjp!4v1714451063021!5m2!1sja!2sjp" 
-    width="600" 
-    height="450" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-
+      <h2>アクセス地図</h2>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.0112251542287!2d140.10232027624398!3d35.651028831769695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602280dfdbe2da2b%3A0x84978b6d5fdba41e!2z44CSMjYxLTAwNzYg5Y2D6JGJ55yM5pil5pys5biC5paw5bO25Yy65bGL5bKh6aeF!5e0!3m2!1sja!2sjp!4v1714451063021!5m2!1sja!2sjp" 
+        width="600" 
+        height="450" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
 </body>
 </html>
