@@ -38,7 +38,15 @@
     .content {
       flex-grow: 1;
       padding: 20px;
-      text-align: center;
+      overflow-y: auto;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
     }
 
     table {
@@ -54,14 +62,6 @@
 
     img {
       margin-top: 10px;
-    }
-
-    .section {
-      display: none;
-    }
-
-    .active {
-      display: block;
     }
 
     .welcome-content {
@@ -80,6 +80,7 @@
       <a href="#">ブログ</a>
     </div>
     <div class="content">
+      <!-- トップページ -->
       <div id="section-top" class="section active">
         <h1>オリーブ薬局山王店のホームページへようこそ！</h1>
         <img src="yakkyoku.jpg" alt="店舗の写真" width="400">
@@ -93,6 +94,7 @@
         </table>
       </div>
 
+      <!-- ようこそページ -->
       <div id="section-welcome" class="section welcome-content">
         <h2>ようこそ！</h2>
         <p>オリーブ薬局山王店では、患者様の立場に立った親身な対応を心掛け、地域に根ざした薬局をスタッフ一丸となって取り組んでおります。</p>
@@ -102,10 +104,10 @@
   </div>
 
   <script>
-    const sectionTop = document.getElementById('section-top');
-    const sectionWelcome = document.getElementById('section-welcome');
     const linkTop = document.getElementById('link-top');
     const linkWelcome = document.getElementById('link-welcome');
+    const sectionTop = document.getElementById('section-top');
+    const sectionWelcome = document.getElementById('section-welcome');
 
     linkTop.addEventListener('click', () => {
       sectionTop.classList.add('active');
@@ -113,8 +115,8 @@
     });
 
     linkWelcome.addEventListener('click', () => {
-      sectionTop.classList.remove('active');
       sectionWelcome.classList.add('active');
+      sectionTop.classList.remove('active');
     });
   </script>
 </body>
