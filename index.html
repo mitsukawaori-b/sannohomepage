@@ -54,6 +54,11 @@
     img {
       margin-top: 10px;
     }
+
+    .welcome-content {
+      text-align: left;
+    }
+
   </style>
 </head>
 <body>
@@ -61,6 +66,7 @@
     <div class="sidebar">
       <h2>メニュー</h2>
       <a href="#">トップ</a>
+      <a href="#">ようこそ</a>
       <a href="#">ブログ</a>
     </div>
     <div class="content">
@@ -74,7 +80,23 @@
         <tr><td><b>電話番号：</b>043-421-7466</td></tr>
         <tr><td><b>FAX番号：</b>042-421-7467</td></tr>
       </table>
+
+      <!-- ようこそのリンク先コンテンツ -->
+      <div class="welcome-content" id="welcome-content" style="display:none;">
+        <h2>ようこそ！</h2>
+        <p>オリーブ薬局山王店では、患者様の立場に立った親身な対応を心掛け、地域に根ざした薬局をスタッフ一丸となって取り組んでおります。</p>
+        <p>音楽好き（Metal/Blues)、ギター好きなスタッフもいますので、気軽に声をかけてください。</p>
+      </div>
+
     </div>
   </div>
+
+  <script>
+    // 「ようこそ」リンクをクリックした時の動作
+    document.querySelectorAll('.sidebar a')[1].addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('welcome-content').style.display = 'block';
+    });
+  </script>
 </body>
 </html>
