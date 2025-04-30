@@ -110,13 +110,17 @@
     <div class="sidebar">
       <h2>メニュー</h2>
       <a id="link-top">トップ</a>
-      <a id="link-welcome">ようこそ</a>
+      <a id="link-qa">Q&A</a>
       <a href="#">ブログ</a>
     </div>
     <div class="content">
       <!-- トップページ -->
       <div id="section-top" class="section active">
         <h1>オリーブ薬局山王店のホームページへようこそ！</h1>
+        
+        <p>オリーブ薬局山王店では、患者様の立場に立った親身な対応を心掛け、地域に根ざした薬局をスタッフ一丸となって取り組んでおります。</p>
+        <p>音楽好き（Metal/Blues)、ギター好きなスタッフもいますので、気軽に声をかけてください。</p>
+
         <div class="top-content">
           <img src="yakkyoku.jpg" alt="店舗の写真">
           <table>
@@ -129,14 +133,10 @@
         </div>
       </div>
 
-      <!-- ようこそページ -->
-      <div id="section-welcome" class="section welcome-content">
-        <h2>ようこそ！</h2>
-        <p>オリーブ薬局山王店では、患者様の立場に立った親身な対応を心掛け、地域に根ざした薬局をスタッフ一丸となって取り組んでおります。</p>
-        <p>音楽好き（Metal/Blues)、ギター好きなスタッフもいますので、気軽に声をかけてください。</p>
-
+      <!-- Q&A ページ -->
+      <div id="section-qa" class="section welcome-content">
+        <h2>Q&A</h2>
         <div class="qa-block">
-          <h3>Q&A</h3>
           <p><b>Q. どこの処方箋を持っていっても大丈夫？</b><br>
           A. 初回は在庫の関係でお待たせするかもしれませんが、2回目以降はスムーズにお渡しすることができます。</p>
 
@@ -150,17 +150,17 @@
 
   <script>
     const linkTop = document.getElementById('link-top');
-    const linkWelcome = document.getElementById('link-welcome');
+    const linkQA = document.getElementById('link-qa');
     const sectionTop = document.getElementById('section-top');
-    const sectionWelcome = document.getElementById('section-welcome');
+    const sectionQA = document.getElementById('section-qa');
 
     linkTop.addEventListener('click', () => {
       sectionTop.classList.add('active');
-      sectionWelcome.classList.remove('active');
+      sectionQA.classList.remove('active');
     });
 
-    linkWelcome.addEventListener('click', () => {
-      sectionWelcome.classList.add('active');
+    linkQA.addEventListener('click', () => {
+      sectionQA.classList.add('active');
       sectionTop.classList.remove('active');
     });
   </script>
