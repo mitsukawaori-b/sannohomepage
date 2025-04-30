@@ -39,6 +39,7 @@
       flex-grow: 1;
       padding: 20px;
       overflow-y: auto;
+      text-align: center;
     }
 
     .section {
@@ -49,25 +50,58 @@
       display: block;
     }
 
-    table {
-      margin: 0 auto;
-      border: 1px solid #000;
-      width: 600px;
+    .top-content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      margin-top: 20px;
     }
 
-    td {
+    .top-content img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .top-content table {
+      margin: 0;
+      border: 1px solid #000;
+      width: 300px;
+    }
+
+    .top-content td {
       padding: 10px;
       text-align: left;
-    }
-
-    img {
-      margin-top: 10px;
     }
 
     .welcome-content {
       text-align: left;
       max-width: 600px;
       margin: 20px auto;
+    }
+
+    .qa-block {
+      margin-top: 30px;
+    }
+
+    .qa-block p {
+      margin: 10px 0;
+    }
+
+    @media (max-width: 600px) {
+      .top-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .top-content img,
+      .top-content table {
+        width: 90%;
+      }
+
+      .top-content td {
+        text-align: left;
+      }
     }
   </style>
 </head>
@@ -80,35 +114,39 @@
       <a href="#">ブログ</a>
     </div>
     <div class="content">
-     <!-- トップページ -->
-<div id="section-top" class="section active">
-  <h1>オリーブ薬局山王店のホームページへようこそ！</h1>
-  <img src="yakkyoku.jpg" alt="店舗の写真" width="400">
+      <!-- トップページ -->
+      <div id="section-top" class="section active">
+        <h1>オリーブ薬局山王店のホームページへようこそ！</h1>
+        <div class="top-content">
+          <img src="yakkyoku.jpg" alt="店舗の写真">
+          <table>
+            <tr><td><b>営業時間：</b>月・火・木・土：8:30〜18:00　水・金：8:30〜16:30</td></tr>
+            <tr><td><b>定休日：</b>日曜・祝日</td></tr>
+            <tr><td><b>所在地：</b>千葉県千葉市稲毛区山王町138-4</td></tr>
+            <tr><td><b>電話番号：</b>043-421-7466</td></tr>
+            <tr><td><b>FAX番号：</b>042-421-7467</td></tr>
+          </table>
+        </div>
+      </div>
 
-  <table>
-    <tr><td><b>営業時間：</b>月・火・木・土：8:30〜18:00　水・金：8:30〜16:30</td></tr>
-    <tr><td><b>定休日：</b>日曜・祝日</td></tr>
-    <tr><td><b>所在地：</b>千葉県千葉市稲毛区山王町138-4</td></tr>
-    <tr><td><b>電話番号：</b>043-421-7466</td></tr>
-    <tr><td><b>FAX番号：</b>042-421-7467</td></tr>
-  </table>
-</div>
+      <!-- ようこそページ -->
+      <div id="section-welcome" class="section welcome-content">
+        <h2>ようこそ！</h2>
+        <p>オリーブ薬局山王店では、患者様の立場に立った親身な対応を心掛け、地域に根ざした薬局をスタッフ一丸となって取り組んでおります。</p>
+        <p>音楽好き（Metal/Blues)、ギター好きなスタッフもいますので、気軽に声をかけてください。</p>
 
- <!-- ようこそページ -->
-<div id="section-welcome" class="section welcome-content">
-  <h2>ようこそ！</h2>
-  <p>オリーブ薬局山王店では、患者様の立場に立った親身な対応を心掛け、地域に根ざした薬局をスタッフ一丸となって取り組んでおります。</p>
-  <p>音楽好き（Metal/Blues)、ギター好きなスタッフもいますので、気軽に声をかけてください。</p>
+        <div class="qa-block">
+          <h3>Q&A</h3>
+          <p><b>Q. どこの処方箋を持っていっても大丈夫？</b><br>
+          A. 初回は在庫の関係でお待たせするかもしれませんが、2回目以降はスムーズにお渡しすることができます。</p>
 
-  <h3>Q&A</h3>
-  <p><strong>Q. どこの処方箋を持っていっても大丈夫？</strong><br>
-  A. 初回は在庫の関係でおまたせするかもしれませんが、2回目以降はスムーズにお渡しすることができます。</p>
-
-  <p><strong>Q. 家にまで届けてほしいんだけど…</strong><br>
-  A. 送料をいただければ、郵送で対応することも可能です。<br>
-  介護保険をお持ちであれば在宅医療へ移行することも可能です。</p>
-</div>
-
+          <p><b>Q. 家にまで届けてほしいんだけど…</b><br>
+          A. 送料をいただければ、郵送で対応することも可能です。<br>
+          介護保険をお持ちであれば在宅医療へ移行することも可能です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
     const linkTop = document.getElementById('link-top');
