@@ -32,6 +32,7 @@
       margin: 10px 0;
       color: blue;
       text-decoration: underline;
+      cursor: pointer;
     }
 
     .content {
@@ -55,47 +56,65 @@
       margin-top: 10px;
     }
 
-    .welcome-content {
-      text-align: left;
+    .section {
+      display: none;
     }
 
+    .active {
+      display: block;
+    }
+
+    .welcome-content {
+      text-align: left;
+      max-width: 600px;
+      margin: 20px auto;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="sidebar">
       <h2>メニュー</h2>
-      <a href="#">トップ</a>
-      <a href="#">ようこそ</a>
+      <a id="link-top">トップ</a>
+      <a id="link-welcome">ようこそ</a>
       <a href="#">ブログ</a>
     </div>
     <div class="content">
-      <h1>オリーブ薬局山王店のホームページへようこそ！</h1>
-      <img src="yakkyoku.jpg" alt="店舗の写真" width="400">
+      <div id="section-top" class="section active">
+        <h1>オリーブ薬局山王店のホームページへようこそ！</h1>
+        <img src="yakkyoku.jpg" alt="店舗の写真" width="400">
 
-      <table>
-        <tr><td><b>営業時間：</b>月・火・木・土：8:30〜18:00　水・金：8:30〜16:30</td></tr>
-        <tr><td><b>定休日：</b>日曜・祝日</td></tr>
-        <tr><td><b>所在地：</b>千葉県千葉市稲毛区山王町138-4</td></tr>
-        <tr><td><b>電話番号：</b>043-421-7466</td></tr>
-        <tr><td><b>FAX番号：</b>042-421-7467</td></tr>
-      </table>
+        <table>
+          <tr><td><b>営業時間：</b>月・火・木・土：8:30〜18:00　水・金：8:30〜16:30</td></tr>
+          <tr><td><b>定休日：</b>日曜・祝日</td></tr>
+          <tr><td><b>所在地：</b>千葉県千葉市稲毛区山王町138-4</td></tr>
+          <tr><td><b>電話番号：</b>043-421-7466</td></tr>
+          <tr><td><b>FAX番号：</b>042-421-7467</td></tr>
+        </table>
+      </div>
 
-      <!-- ようこそのリンク先コンテンツ -->
-      <div class="welcome-content" id="welcome-content" style="display:none;">
+      <div id="section-welcome" class="section welcome-content">
         <h2>ようこそ！</h2>
         <p>オリーブ薬局山王店では、患者様の立場に立った親身な対応を心掛け、地域に根ざした薬局をスタッフ一丸となって取り組んでおります。</p>
         <p>音楽好き（Metal/Blues)、ギター好きなスタッフもいますので、気軽に声をかけてください。</p>
       </div>
-
     </div>
   </div>
 
   <script>
-    // 「ようこそ」リンクをクリックした時の動作
-    document.querySelectorAll('.sidebar a')[1].addEventListener('click', function(e) {
-      e.preventDefault();
-      document.getElementById('welcome-content').style.display = 'block';
+    const sectionTop = document.getElementById('section-top');
+    const sectionWelcome = document.getElementById('section-welcome');
+    const linkTop = document.getElementById('link-top');
+    const linkWelcome = document.getElementById('link-welcome');
+
+    linkTop.addEventListener('click', () => {
+      sectionTop.classList.add('active');
+      sectionWelcome.classList.remove('active');
+    });
+
+    linkWelcome.addEventListener('click', () => {
+      sectionTop.classList.remove('active');
+      sectionWelcome.classList.add('active');
     });
   </script>
 </body>
