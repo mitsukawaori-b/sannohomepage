@@ -36,15 +36,13 @@
     }
 
     .sidebar a.external-link {
-      color: blue;
-      text-decoration: underline;
+      cursor: pointer;
     }
 
     .content {
       flex-grow: 1;
       padding: 20px;
       overflow-y: auto;
-      text-align: center;
     }
 
     .section {
@@ -55,69 +53,39 @@
       display: block;
     }
 
-    .top-content {
+    .top-wrapper {
       display: flex;
-      justify-content: center;
       align-items: flex-start;
+      justify-content: center;
       gap: 40px;
-      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
-    .top-content img {
-      max-width: 300px;
-      height: auto;
-    }
-
-    .top-content table {
-      margin: 0;
+    table {
       border: 1px solid #000;
       width: 300px;
     }
 
-    .top-content td {
+    td {
       padding: 10px;
       text-align: left;
     }
 
-    .welcome-content {
-      text-align: left;
+    img {
+      max-width: 400px;
+      height: auto;
+    }
+
+    .info-text {
       max-width: 600px;
-      margin: 20px auto;
-    }
-
-    .qa-block {
-      margin-top: 30px;
-    }
-
-    .qa-block p {
-      margin: 10px 0;
-    }
-
-    .additional-info {
+      margin: 0 auto;
       text-align: left;
-      max-width: 600px;
-      margin: 20px auto;
     }
 
-    .blog-link {
-      margin-top: 20px;
+    .info-text p {
+      margin-top: 1em;
     }
 
-    @media (max-width: 600px) {
-      .top-content {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .top-content img,
-      .top-content table {
-        width: 90%;
-      }
-
-      .top-content td {
-        text-align: left;
-      }
-    }
   </style>
 </head>
 <body>
@@ -126,16 +94,17 @@
       <h2>メニュー</h2>
       <a id="link-top">トップ</a>
       <a id="link-qa">Q&A</a>
-      <a class="external-link" href="https://www.google.com/maps/place/オリーブ薬局山王店/@35.6521675,140.1192601,17z" target="_blank">アクセス</a>
       <a class="external-link" href="https://note.com/olivesannou001" target="_blank">ブログ</a>
+      <a class="external-link" href="https://www.google.com/maps/place/%E3%80%92263-0002+%E5%8D%83%E8%91%89%E7%9C%8C%E5%8D%83%E8%91%89%E5%B8%82%E7%A8%B2%E6%AF%9B%E5%8C%BA%E5%B1%B1%E7%8E%8B%E7%94%BA%EF%BC%91%EF%BC%93%EF%BC%98%E2%88%92%EF%BC%94/@35.6651463,140.1384791,16z/data=!3m1!4b1!4m6!3m5!1s0x6022844b5f421a71:0x9f69858f0023f5ad!8m2!3d35.6651463!4d140.141054!16s%2Fg%2F11dxmdgzbp?entry=ttu" target="_blank">アクセス</a>
     </div>
+
     <div class="content">
       <!-- トップページ -->
       <div id="section-top" class="section active">
         <h1>オリーブ薬局山王店のホームページへようこそ！</h1>
         <br><br>
 
-        <div class="top-content">
+        <div class="top-wrapper">
           <img src="yakkyoku.jpg" alt="店舗の写真">
           <table>
             <tr><td><b>営業時間：</b>月・火・木・土：8:30〜18:00　水・金：8:30〜16:30</td></tr>
@@ -146,28 +115,24 @@
           </table>
         </div>
 
-        <div class="additional-info">
+        <div class="info-text">
           <p>オリーブ薬局山王店では、患者様の立場に立った親身な対応を心掛け、地域に根ざした薬局をスタッフ一丸となって取り組んでおります。</p>
           <p>音楽好き（Metal/Blues)、ギター好きなスタッフもいますので、気軽に声をかけてください。</p>
           <p>お薬をお届けすることや郵送することもできますので、お気軽にお声掛けください。</p>
-
-          <div class="blog-link">
-            <a href="https://note.com/olivesannou001" target="_blank">ブログ</a>
-          </div>
+          <br>
+          <p><a href="https://note.com/olivesannou001" target="_blank">ブログ・最新情報はここから</a></p>
         </div>
       </div>
 
-      <!-- Q&A ページ -->
-      <div id="section-qa" class="section welcome-content">
+      <!-- Q&Aページ -->
+      <div id="section-qa" class="section">
         <h2>Q&A</h2>
-        <div class="qa-block">
-          <p><b>Q. どこの処方箋を持っていっても大丈夫？</b><br>
-          A. 初回は在庫の関係でお待たせするかもしれませんが、2回目以降はスムーズにお渡しすることができます。</p>
+        <p><strong>Q. どこの処方箋を持っていっても大丈夫？</strong><br>
+        A. 初回は在庫の関係でおまたせするかもしれませんが、2回目以降はスムーズにお渡しすることができます。</p>
 
-          <p><b>Q. 家にまで届けてほしいんだけど…</b><br>
-          A. 送料をいただければ、郵送で対応することも可能です。<br>
-          介護保険をお持ちであれば在宅医療へ移行することも可能です。</p>
-        </div>
+        <p><strong>Q. 家にまで届けてほしいんだけど…</strong><br>
+        A. 送料をいただければ、郵送で対応することも可能です。<br>
+        介護保険をお持ちであれば在宅医療へ移行することも可能です。</p>
       </div>
     </div>
   </div>
