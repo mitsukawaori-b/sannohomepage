@@ -1,338 +1,195 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>オリーブ薬局山王店</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "MS Pゴシック", sans-serif;
-      background-color: #ffffff;
-    }
-    
+
+<html> <head> <meta charset="UTF-8"> <title>オリーブ薬局山王店</title> <style> body { margin: 0; font-family: "MS Pゴシック", sans-serif; background-color: #ffffff; }
+
 h1 {
   text-align: center;
 }
-    .container {
-      display: flex;
-      height: 100vh;
-    }
 
-    .sidebar {
-      width: 200px;
-      background-color: #f0f0f0;
-      border-right: 2px solid #000;
-      padding: 20px;
-    }
+.container {
+  display: flex;
+  height: 100vh;
+}
 
-    .sidebar h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
+.sidebar {
+  width: 200px;
+  background-color: #f0f0f0;
+  border-right: 2px solid #000;
+  padding: 20px;
+}
 
-    .sidebar a {
-      display: block;
-      margin: 10px 0;
-      color: blue;
-      text-decoration: underline;
-      cursor: pointer;
-    }
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-    .sidebar a.external-link {
-      cursor: pointer;
-    }
+.sidebar a {
+  display: block;
+  margin: 10px 0;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
-    .content {
-      flex-grow: 1;
-      padding: 20px;
-      overflow-y: auto;
-    }
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
 
-    .section {
-      display: none;
-    }
+.section {
+  display: none;
+}
 
-    .section.active {
-      display: block;
-    }
+.section.active {
+  display: block;
+}
 
-    .top-wrapper {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 40px;
-      margin-bottom: 20px;
-    }
+.top-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
 
-    table {
-      border: 1px solid #000;
-      width: 300px;
-    }
+table {
+  border: 1px solid #000;
+  width: 300px;
+}
 
-    td {
-      padding: 10px;
-      text-align: left;
-    }
+td {
+  padding: 10px;
+  text-align: left;
+}
 
-    img {
-      max-width: 400px;
-      height: auto;
-    }
+img {
+  max-width: 400px;
+  height: auto;
+}
 
-    .info-text {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
-    }
+.info-text {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
 
-    .info-text p {
-      margin-top: 1em;
-    }
+.info-box {
+  max-width: 700px;
+  margin: 20px auto;
+  text-align: left;
+}
 
-    .info-box {
-      max-width: 700px;
-      margin: 0 auto 30px auto;
-      text-align: left;
-    }
+.info-box h3 {
+  border-left: 6px solid #4a90a4;
+  padding-left: 10px;
+  margin-bottom: 8px;
+}
 
-    .info-box h3 {
-      border-left: 6px solid #4a90a4;
-      padding-left: 10px;
-      margin-bottom: 8px;
-    }
+</style> </head>
 
-    .info-box ul {
-      margin-top: 4px;
-    }
+<body> <div class="container">
 
-    .notice-box {
-      max-width: 700px;
-      margin: 0 auto 20px auto;
-      border: 1px solid #ccc;
-      background-color: #f7fbfc;
-      padding: 15px 20px;
-      text-align: left;
-    }
+<!-- サイドバー -->
 
-    .notice-box .date {
-      color: #666;
-      font-size: 0.9em;
-    }
+<div class="sidebar"> <h2>メニュー</h2> <a id="link-top">トップ</a> <a id="link-facility">施設の方へ</a> <a id="link-qa">Q&A</a> <a id="link-standards">施設基準</a> <a href="https://note.com/olivesannou001" target="_blank">ブログ</a> <a href="https://www.google.com/maps/place/" target="_blank">アクセス</a> </div>
 
-    .qa-item {
-      max-width: 700px;
-      margin: 0 auto 20px auto;
-      text-align: left;
-    }
+<!-- メイン -->
 
-    .facility-table {
-      width: 100%;
-      max-width: 700px;
-      margin: 15px auto;
-      border-collapse: collapse;
-    }
+<div class="content">
 
-    .facility-table td, .facility-table th {
-      border: 1px solid #ccc;
-      padding: 8px 12px;
-      text-align: left;
-    }
+<!-- トップ -->
+<div id="section-top" class="section active">
 
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="sidebar">
-      <h2>メニュー</h2>
-      <a id="link-top">トップ</a>
-      <a id="link-service">サービス紹介</a>
-      <a id="link-facility">施設の方へ</a>
-      <a id="link-qa">Q&A</a>
-      <a id="link-standards">施設基準・算定状況に関する事項</a>
-      <a class="external-link" href="https://note.com/olivesannou001" target="_blank">ブログ</a>
-      <a class="external-link" href="https://www.google.com/maps/place/%E3%80%92263-0002+%E5%8D%83%E8%91%89%E7%9C%8C%E5%8D%83%E8%91%89%E5%B8%82%E7%A8%B2%E6%AF%9B%E5%8C%BA%E5%B1%B1%E7%8E%8B%E7%94%BA%EF%BC%91%EF%BC%93%EF%BC%98%E2%88%92%EF%BC%94/@35.6651463,140.1384791,16z/data=!3m1!4b1!4m6!3m5!1s0x6022844b5f421a71:0x9f69858f0023f5ad!8m2!3d35.6651463!4d140.141054!16s%2Fg%2F11dxmdgzbp?entry=ttu" target="_blank">アクセス</a>
-    </div>
+  <h1>
+    <marquee>オリーブ薬局山王店のホームページへようこそ！</marquee>
+  </h1>
 
-    <div class="content">
-      <!-- トップページ -->
-      <div id="section-top" class="section active">
-        <h1><marquee behavior="scroll" direction="left" scrollamount="6">オリーブ薬局山王店のホームページへようこそ！</marquee></h1>
-        <p style="text-align:center; font-size:14px; color:#cc0000;">
-          あなたは<br>
-          <!--タグはここから--><table border="0" cellspacing="0" cellpadding="0" style="margin:6px auto;"><tr><td align="center"><a href="http://www.rays-counter.com/"><img src="http://www.rays-counter.com/d1310_f6_022/6a4fcbc5291cf/" alt="アクセスカウンター" border="0"></a></td></tr><tr><td align="center"><img src="http://www.rays-counter.com/images/counter_01.gif" border="0"><img src="http://www.rays-counter.com/images/counter_02.gif" border="0"><img src="http://www.rays-counter.com/images/counter_03.gif" border="0"><img src="http://www.rays-counter.com/images/counter_04.gif" border="0" ><img src="http://www.rays-counter.com/images/counter_05.gif" border="0"></td></tr></table><!--ここまで-->
-          番目の訪問です！<br>
-          キリ番の人は掲示板にカキコして下さい！素通り禁止！！
-        </p>
-        <br><br>
+  <!-- カウンター -->
+  <div style="text-align:center; font-size:14px; color:#cc0000;">
+    あなたは<br>
 
-        <div class="top-wrapper">
-          <img src="yakkyoku.jpg" alt="店舗の写真">
-          <table>
-            <tr><td><b>営業時間：</b>月・火・木・土：8:30〜18:00　水・金：8:30〜16:30</td></tr>
-            <tr><td><b>定休日：</b>日曜・祝日</td></tr>
-            <tr><td><b>所在地：</b>千葉県千葉市稲毛区山王町138-4</td></tr>
-            <tr><td><b>電話番号：</b>043-421-7466</td></tr>
-            <tr><td><b>FAX番号：</b>043-421-7467</td></tr>
-          </table>
-        </div>
+    <table border="0" cellspacing="0" cellpadding="0" style="margin:10px auto;">
+      <tr>
+        <td align="center">
+          <a href="http://www.rays-counter.com/">
+            <img src="http://www.rays-counter.com/d1310_f6_022/6a4fcbc5291cf/">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <img src="http://www.rays-counter.com/images/counter_01.gif">
+          <img src="http://www.rays-counter.com/images/counter_02.gif">
+          <img src="http://www.rays-counter.com/images/counter_03.gif">
+          <img src="http://www.rays-counter.com/images/counter_04.gif">
+          <img src="http://www.rays-counter.com/images/counter_05.gif">
+        </td>
+      </tr>
+    </table>
 
-        <div class="info-text">
-          <p>オリーブ薬局山王店では、患者様の立場に立った親身な対応を心掛け、地域に根ざした薬局をスタッフ一丸となって取り組んでおります。</p>
-          <p>無料専用駐車場あり（正面15台・裏5台）<br>
-          京成バス「山王町」バス停下車 徒歩1分<br>
-          （JR稲毛駅・西千葉駅よりバスをご利用ください）</p>
-          <br>
-          <p><img src="reload.jpg" alt="MITSUKAWA RELOAD" style="height:7.2em; width:auto; vertical-align:middle; margin-right:8px; border-radius:3px;"> <a href="https://note.com/olivesannou001" target="_blank">ブログ・最新情報はここから</a> <img src="reload.jpg" alt="MITSUKAWA RELOAD" style="height:7.2em; width:auto; vertical-align:middle; margin-left:8px; border-radius:3px;"></p>
-        </div>
-      </div>
-
-      <!-- サービス紹介ページ -->
-      <div id="section-service" class="section">
-        <h2>サービス紹介</h2>
-        <div class="info-box">
-          <h3>お薬の受け取りをサポート</h3>
-          <ul>
-            <li>一包化・お薬カレンダーへのセットに対応しています</li>
-            <li>継続して服用しているお薬は事前注文が可能です。あらかじめお薬の内容を教えていただければ、事前にご準備しておきます</li>
-            <li>ご自宅までの配送・郵送にも対応しています</li>
-          </ul>
-
-          <h3>服薬指導へのこだわり</h3>
-          <p>「スピード」と「やさしさ」を大切にしています。お待たせしないスムーズなお渡しと、お一人おひとりに合わせた丁寧な説明を心掛けています。</p>
-
-          <h3>在宅医療への対応実績</h3>
-          <p>グループホーム6施設、個人在宅3件に対応しております（2026年7月現在）。介護保険をお持ちの方は在宅医療への移行もご相談いただけます。</p>
-        </div>
-      </div>
-
-      <!-- 施設の方へページ -->
-      <div id="section-facility" class="section">
-        <h2>介護施設・グループホームの皆様へ</h2>
-        <div class="info-box">
-          <p>オリーブ薬局山王店では、施設様への訪問服薬指導・お薬のお届けを行っております。新規のご相談も承っておりますので、お気軽にお問い合わせください。</p>
-
-          <h3>対応可能な施設形態</h3>
-          <p>特別養護老人ホーム、介護老人保健施設、グループホーム、サービス付き高齢者向け住宅など、施設形態を問わずすべて対応可能です。</p>
-
-          <h3>訪問可能エリア</h3>
-          <p>千葉市を中心に、八千代市・佐倉市など、当薬局から10km圏内のエリアに対応しております。</p>
-
-          <h3>実績</h3>
-          <p>グループホーム6施設、個人在宅3件への対応実績がございます。</p>
-
-          <h3>お問い合わせ</h3>
-          <table class="facility-table">
-            <tr><th>お電話</th><td>043-421-7466</td></tr>
-            <tr><th>受付時間</th><td>月・火・木・土：8:30〜18:00　水・金：8:30〜16:30（日曜・祝日を除く）</td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- Q&Aページ -->
-      <div id="section-qa" class="section">
-        <h2>Q&A</h2>
-
-        <div class="qa-item">
-          <strong>Q. どこの処方箋を持っていっても大丈夫？</strong><br>
-          A. 初回は在庫の関係でおまたせするかもしれませんが、2回目以降はスムーズにお渡しすることができます。
-        </div>
-
-        <div class="qa-item">
-          <strong>Q. 家にまで届けてほしいんだけど…</strong><br>
-          A. 送料をいただければ、郵送で対応することも可能です。<br>
-          介護保険をお持ちであれば在宅医療へ移行することも可能です。
-        </div>
-
-        <div class="qa-item">
-          <strong>Q. 一包化やお薬カレンダーへのセットはお願いできますか？</strong><br>
-          A. 対応可能です。飲み忘れが心配な方はお気軽にご相談ください。
-        </div>
-
-        <div class="qa-item">
-          <strong>Q. いつも飲んでいるお薬を、来局前に準備しておいてもらうことはできますか？</strong><br>
-          A. 可能です。継続して服用しているお薬であれば事前注文ができますので、あらかじめお薬の内容をお電話等で教えてください。事前にご準備した状態でお待ちします。
-        </div>
-
-        <div class="qa-item">
-          <strong>Q. 他の病院・クリニックでもらっているお薬と一緒に管理してもらえますか？</strong><br>
-          A. 可能です。お薬手帳を活用して、他院処方のお薬も含めて一元的に管理し、飲み合わせのチェックを行っています。かかりつけ薬局としてぜひご利用ください。
-        </div>
-
-        <div class="qa-item">
-          <strong>Q. 薬が余ってしまっている（残薬がある）のですが、調整してもらえますか？</strong><br>
-          A. 可能です。残薬の状況をお伺いした上で、処方医と相談しながら次回の処方日数を調整するなどの対応をいたします。お薬が余っている場合はお気軽にお持ちください。
-        </div>
-      </div>
-
-      <!-- 施設基準・算定状況に関する事項ページ -->
-      <div id="section-standards" class="section">
-        <h2>施設基準・算定状況に関する事項</h2>
-        <div class="info-box">
-
-          <h3>1. 施設基準・算定状況に関する事項</h3>
-          <ul>
-            <li>調剤基本料：調剤基本料１</li>
-            <li>地域支援体制加算：有（区分：地域支援体制加算２）</li>
-            <li>後発医薬品調剤体制加算：無</li>
-            <li>医薬品供給体制の整備状況：特になし</li>
-            <li>医療DX推進体制整備加算：無</li>
-            <li>電子的調剤情報連携体制整備加算：無</li>
-            <li>連携強化加算：有</li>
-            <li>在宅薬学総合体制加算：有（加算１）</li>
-            <li>無菌製剤処理加算に係る体制：無</li>
-            <li>調剤ベースアップ評価料：算定</li>
-          </ul>
-
-          <h3>2. 患者への対応・保険に関する事項</h3>
-          <ul>
-            <li>取扱保険：健康保険法・国民健康保険法・後期高齢者医療制度</li>
-            <li>取扱公費負担医療：生活保護法・労災保険・指定難病・小児慢性特定疾病・その他</li>
-            <li>個別の調剤報酬算定項目が分かる明細書：無料発行しています</li>
-            <li>時間外・夜間休日等の対応体制：有（加算算定：有）</li>
-            <li>長期収載品の選定療養（後発品がある先発品を希望される場合の自己負担）：対応しています</li>
-          </ul>
-
-          <h3>3. その他（薬機法・医療法関連）</h3>
-          <ul>
-            <li>認定薬局：該当なし</li>
-            <li>個人情報の取扱い（利用目的等）：調剤のみに使用いたします</li>
-            <li>療養の給付と直接関係ないサービス等の実費：お薬の郵送料　実費／容器代　無し</li>
-          </ul>
-
-          <p style="color:#888; margin-top:20px;">最終更新日：令和８年７月８日</p>
-        </div>
-      </div>
-    </div>
+    番目の訪問です！<br>
+    キリ番の人は掲示板にカキコして下さい！素通り禁止！！
   </div>
 
-  <script>
-    const links = {
-      top: document.getElementById('link-top'),
-      service: document.getElementById('link-service'),
-      facility: document.getElementById('link-facility'),
-      qa: document.getElementById('link-qa'),
-      standards: document.getElementById('link-standards'),
-    };
+  <br><br>
 
-    const sections = {
-      top: document.getElementById('section-top'),
-      service: document.getElementById('section-service'),
-      facility: document.getElementById('section-facility'),
-      qa: document.getElementById('section-qa'),
-      standards: document.getElementById('section-standards'),
-    };
+  <div class="top-wrapper">
+    <img src="yakkyoku.jpg">
 
-    function showSection(key) {
-      Object.keys(sections).forEach((k) => {
-        sections[k].classList.toggle('active', k === key);
-      });
-    }
+    <table>
+      <tr><td><b>営業時間：</b>月・火・木・土：8:30〜18:00　水・金：8:30〜16:30</td></tr>
+      <tr><td><b>定休日：</b>日曜・祝日</td></tr>
+      <tr><td><b>所在地：</b>千葉県千葉市稲毛区山王町138-4</td></tr>
+      <tr><td><b>電話：</b>043-421-7466</td></tr>
+    </table>
+  </div>
 
-    links.top.addEventListener('click', () => showSection('top'));
-    links.service.addEventListener('click', () => showSection('service'));
-    links.facility.addEventListener('click', () => showSection('facility'));
-    links.qa.addEventListener('click', () => showSection('qa'));
-    links.standards.addEventListener('click', () => showSection('standards'));
-  </script>
-</body>
-</html>
+  <div class="info-text">
+    <p>
+      オリーブ薬局山王店では、患者様の立場に立った親身な対応を心掛け、
+      地域に根ざした薬局をスタッフ一丸となって取り組んでおります。
+    </p>
+
+    <!-- サービス紹介ここに移動 -->
+    <div class="info-box">
+      <h3>お薬の受け取りをサポート</h3>
+      <ul>
+        <li>一包化・お薬カレンダー対応</li>
+        <li>事前準備OK</li>
+        <li>配送・郵送対応</li>
+      </ul>
+
+      <h3>服薬指導</h3>
+      <p>スピードとやさしさを重視</p>
+
+      <h3>在宅実績</h3>
+      <p>施設6・在宅3件対応</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- 施設 -->
+<div id="section-facility" class="section">
+  <h2>施設の方へ</h2>
+  <p>訪問服薬指導対応しています</p>
+</div>
+
+<!-- Q&A -->
+<div id="section-qa" class="section">
+  <h2>Q&A</h2>
+  <p>どこの処方箋でもOKです</p>
+</div>
+
+<!-- 基準 -->
+<div id="section-standards" class="section">
+  <h2>施設基準</h2>
+  <p>調剤基本料1など算定</p>
+</div>
+
+</div> </div>
+
+<script> const links = { top: document.getElementById('link-top'), facility: document.getElementById('link-facility'), qa: document.getElementById('link-qa'), standards: document.getElementById('link-standards'), }; const sections = { top: document.getElementById('section-top'), facility: document.getElementById('section-facility'), qa: document.getElementById('section-qa'), standards: document.getElementById('section-standards'), }; function showSection(key) { Object.keys(sections).forEach((k) => { sections[k].classList.toggle('active', k === key); }); } links.top.onclick = () => showSection('top'); links.facility.onclick = () => showSection('facility'); links.qa.onclick = () => showSection('qa'); links.standards.onclick = () => showSection('standards'); </script>
+
+</body> </html>
