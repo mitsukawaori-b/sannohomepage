@@ -90,7 +90,7 @@ h1 {
     }
 
     .info-text {
-      max-width: 600px;
+      max-width: 900px;
       margin: 0 auto;
       text-align: left;
     }
@@ -100,7 +100,7 @@ h1 {
     }
 
     .info-box {
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto 30px auto;
       text-align: left;
     }
@@ -167,6 +167,33 @@ h1 {
     @keyframes marquee-scroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-100%); }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .sidebar {
+        width: auto;
+        border-right: none;
+        border-bottom: 2px solid #000;
+      }
+
+      .top-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      img {
+        max-width: 100% !important;
+        height: auto;
+      }
+
+      body {
+        font-size: 16px;
+      }
     }
 
   </style>
